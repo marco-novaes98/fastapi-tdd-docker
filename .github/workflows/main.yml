@@ -3,7 +3,7 @@ name: Continuous Integration and Delivery
 on: [push]
 
 env:
-  IMAGE: docker.pkg.github.com/marco-novaes98/fastapi-tdd-docker/summarizer
+  IMAGE: ghcr.io/marco-novaes98/fastapi-tdd-docker/summarizer
 
 jobs:
 
