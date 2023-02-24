@@ -1,4 +1,4 @@
-name: Continuous Integration and Delivery!!!
+name: Continuous Integration and Delivery!!!!
 
 on: [push]
 
@@ -16,9 +16,9 @@ jobs:
         with:
           ref: master
       - name: Log in to GitHub Packages
-        run: echo ${{secrets.GIT_DOCKER_PAT}} | docker login -u ${GITHUB_ACTOR} --password-stdin ghcr.io
+        run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin ghcr.io
         env:
-          GITHUB_TOKEN: ${{ secrets.GIT_DOCKER_PAT  }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Pull image
         run: |
           docker pull ${{ env.IMAGE }}:latest || true
