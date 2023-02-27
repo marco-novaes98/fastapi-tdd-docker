@@ -5,11 +5,8 @@ from app.models.tortoise import TextSummary
 
 
 async def post(payload: SummaryPayloadSchema) -> int:
-    summary = TextSummary(
-        url=payload.url,
-        summary="dummy summary",
-    )
-    await summary.save()  # TODO: la funcion save no se define en el tutorial...
+    summary = TextSummary(url=payload.url, summary="")
+    await summary.save()
     return summary.id
 
 
